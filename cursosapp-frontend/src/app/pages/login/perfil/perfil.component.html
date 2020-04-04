@@ -1,0 +1,44 @@
+<!--mat-card class="example-card" style="width: 200px">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Mi perfil</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/avatar-usuario.jpg" width="128" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+    </mat-card-content>
+</mat-card-->
+
+
+<!--div>
+
+    <mat-card class="example-card" style="width: 150px">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Mi perfil</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/avatar-usuario.jpg" width="128" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <span>{{nombreUsuario}}</span>
+            <span>{{rol}}</span>
+        </mat-card-content>
+    </mat-card>
+</div-->
+
+<div>
+    <mat-card-header>
+        <mat-card-title>Información De Usuario</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/avatar-usuario.jpg" width="128" alt="Photo of a Shiba Inu">
+    <mat-form-field>
+        <mat-label>Usuario : </mat-label>
+        <input matInput placeholder="" [disabled]="true">
+        <span>{{nombreUsuario}}</span>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Perfil : </mat-label>
+        <input matInput placeholder="" [disabled]="true">
+        <span>{{rol}}</span>
+    </mat-form-field>
+</div>
+
+<button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>

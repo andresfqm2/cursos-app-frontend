@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cursosapp-frontend": {
+    "mediapp-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cursosapp-frontend",
+            "outputPath": "dist/mediapp-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cursosapp-frontend:build"
+            "browserTarget": "mediapp-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cursosapp-frontend:build:production"
+              "browserTarget": "mediapp-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cursosapp-frontend:build"
+            "browserTarget": "mediapp-frontend:build"
           }
         },
         "test": {
@@ -112,19 +112,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cursosapp-frontend:serve"
+            "devServerTarget": "mediapp-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cursosapp-frontend:serve:production"
+              "devServerTarget": "mediapp-frontend:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "cursosapp-frontend",
+  "defaultProject": "mediapp-frontend",
   "cli": {
-    "analytics": "37becfc8-35d3-4a95-8e9d-1fb38b0f4ca1"
+    "analytics": false
   }
 }
