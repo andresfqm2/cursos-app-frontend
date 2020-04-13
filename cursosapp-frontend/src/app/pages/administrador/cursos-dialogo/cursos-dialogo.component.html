@@ -1,0 +1,28 @@
+<div>
+    <mat-card-header>
+        <mat-card-title>Información Del Curso</mat-card-title>
+    </mat-card-header>
+
+    <mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="curso.nombre">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Fecha Inicio" [max]="maxFecha" [(ngModel)]="fechaInicio">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker1" placeholder="Fecha Fin" [(ngModel)]="fechaFin">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="foto" [(ngModel)]="curso.urlImagen">
+    </mat-form-field>
+    <img mat-card-image [src]="curso.urlImagen" alt="" width="50%" height="50%" *ngIf="curso.urlImagen != null">
+</div>
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>

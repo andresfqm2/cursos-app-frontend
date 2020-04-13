@@ -33,10 +33,15 @@ export class GuardService implements CanActivate {
         //3)VERIFICAR SI TIENES EL ROL NECESARIO PARA ACCEDER A ESA PAGINA        
 
         let url = state.url;
+        console.log("Lo que tienen la vaiable url");
+        console.log(url);
         const decodedToken = helper.decodeToken(token);
 
         return this.menuService.listarPorUsuario(decodedToken.user_name).pipe(map((data : Menu[]) => {
           this.menuService.menuCambio.next(data);
+
+          console.log("Lo que tienen la vaiable data");
+          console.log(data);
 
           let cont = 0;
           for (let m of data) {

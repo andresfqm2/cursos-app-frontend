@@ -21,6 +21,9 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { PerfilComponent } from './pages/login/perfil/perfil.component';
 import { RegistroComponent } from './pages/login/registro/registro.component';
 import { EstudianteComponent } from './pages/estudiante/estudiante.component';
+import { DocenteComponent } from './pages/docente/docente.component';
+import { AdministrarCursosComponent } from './pages/administrador/administrar-cursos/administrar-cursos.component';
+import { CursosDialogoComponent } from './pages/administrador/cursos-dialogo/cursos-dialogo.component';
 
 
 export function tokenGetter() {
@@ -38,7 +41,10 @@ export function tokenGetter() {
     TokenComponent,
     PerfilComponent,
     RegistroComponent,
-    EstudianteComponent
+    EstudianteComponent,
+    DocenteComponent,
+    AdministrarCursosComponent,
+    CursosDialogoComponent
   ],
 
   imports: [
