@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DocenteComponent } from './pages/docente/docente.component';
 import { AdministrarCursosComponent } from './pages/administrador/administrar-cursos/administrar-cursos.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   },
   */
   {path: 'estudiante', component: EstudianteComponent, canActivate: [GuardService]},
+  {path: 'cursos', component: CursosComponent, canActivate: [GuardService]},
   {path: 'docente', component: DocenteComponent, canActivate: [GuardService]},
   {path: 'administrar-cursos', component: AdministrarCursosComponent, canActivate: [GuardService]},
   { path: 'not-403', component: Not403Component },

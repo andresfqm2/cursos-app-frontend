@@ -57,11 +57,16 @@ export class RegistroComponent implements OnInit {
 
   get f() { return this.form.controls; }
 
+  getFontSize() {
+    return Math.max(10, this.myControlRol.value);
+  }
+
   operar() {
 
     if (this.form.invalid) {
       return;
     }
+
 
     let usuario = new Usuario;
     usuario.idUsuario = 0;
@@ -73,7 +78,7 @@ export class RegistroComponent implements OnInit {
     usuario.email = this.form.value['email'];
     usuario.pass = this.form.value['password'];
     usuario.rol = this.form.value['rol'];
-  
+
 
     this.registroService.registrar(usuario).subscribe(() => {
       this.registroService.mensajeCambio.next('SE REGISTRO');
@@ -105,15 +110,10 @@ export class RegistroComponent implements OnInit {
   }
 
   mostrarRol(val: Rol) {
-    console.log("Ingreso a mostrarRol y lo que tiene val es: ");
-    console.log(val);
-
     return val ? `${val.nombre}` : val;
   }
 
   seleccionarRol(e: any) {
-    console.log("Ingreso al metodo seleccionarRol");
-    console.log(e);
     this.rolSeleccionado = e.option.value;
   }
 }

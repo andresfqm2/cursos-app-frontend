@@ -1,62 +1,68 @@
-<mat-card>Ingrese los datos del paciente</mat-card>
+<router-outlet></router-outlet>
+<div class="example-container">
 
-<form class="example-container" [formGroup]="form" #frmPaciente="ngForm" (ngSubmit)="operar()">
-    <div [hidden]="true">
-        <mat-form-field class="example-full-width">frmPaciente
-            <input matInput placeholder="ID" required formControlName="id">
-        </mat-form-field>
-    </div>
+    <mat-card>Ingrese los datos de registro</mat-card>
 
-    <mat-form-field class="example-full-width">
-        <div *ngIf="f.nombres.errors?.required" class="invalido">Nombre es requerido</div>        
-        <div *ngIf="f.nombres.errors?.minlength" class="invalido">El campo debe ser mayor a 3 caracteres</div>        
-        <input matInput placeholder="Nombres" minlength="3" required formControlName="nombres">
-    </mat-form-field>
+    <form class="example-container" [formGroup]="form" #frmRegistro="ngForm" (ngSubmit)="operar()">
+        <div [hidden]="true">
+            <mat-form-field class="example-full-width">frmRegistro
+                <input matInput placeholder="ID" required formControlName="id">
+            </mat-form-field>
+        </div>
 
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Apellidos" required formControlName="apellidos">
-    </mat-form-field>
+        <div>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Nombres" minlength="3" required formControlName="nombres">
+            </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Número Identificación" required formControlName="dni" type="number">
-    </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Apellidos" required formControlName="apellidos">
+            </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Edad" required formControlName="edad" type="number">
-    </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Número Identificación" required formControlName="dni" type="number">
+            </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Teléfono" required formControlName="telefono" type="number">
-    </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Edad" required formControlName="edad" type="number">
+            </mat-form-field>
+        </div>
 
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Email" required formControlName="email">
-    </mat-form-field>
+        <div>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Teléfono" required formControlName="telefono" type="number">
+            </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Password" required formControlName="password" type="password">
-    </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" required formControlName="email">
+            </mat-form-field>
 
-    <mat-form-field>
-        <input type="text" placeholder="Rol" matInput [matAutocomplete]="autorol"
-            [formControl]="myControlRol" formControlName="rol">
-    </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password" required formControlName="password" type="password">
+            </mat-form-field>
 
-        <mat-autocomplete #autorol="matAutocomplete" [displayWith]="mostrarRol"
-            (optionSelected)="seleccionarRol($event)">
-            <mat-option *ngFor="let p of rolesFiltrados | async" [value]="p">
-                {{ p.nombre }}
-            </mat-option>
-        </mat-autocomplete>
+            <mat-form-field>
+                <input type="text" placeholder="Rol" required matInput [matAutocomplete]="autorol"
+                    [formControl]="myControlRol" formControlName="rol">
+            </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">
-        <mat-icon>done</mat-icon>
-        <span>Aceptar</span>
-    </button>
-    <button mat-raised-button color="accent" routerLink='/login' type="button">
-        <mat-icon>close</mat-icon>
-        <span>Cancelar</span>
-    </button>
+            <mat-autocomplete #autorol="matAutocomplete" [displayWith]="mostrarRol"
+                (optionSelected)="seleccionarRol($event)">
+                <mat-option *ngFor="let p of rolesFiltrados | async" [value]="p">
+                    {{ p.nombre }}
+                </mat-option>
+            </mat-autocomplete>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" type="submit" [disabled]="frmRegistro.invalid">
+                <mat-icon>done</mat-icon>
+                <span>Aceptar</span>
+            </button>
+            <button mat-raised-button color="accent" routerLink='/login' type="button">
+                <mat-icon>close</mat-icon>
+                <span>Cancelar</span>
+            </button>
+        </div>
 
-
-</form>
+    </form>
+</div>

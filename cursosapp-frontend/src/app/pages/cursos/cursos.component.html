@@ -1,0 +1,18 @@
+<div *ngFor="let row of dataSource">
+    <div class="contenedor">
+        <mat-card class="tarjeta">
+            <mat-card-header>
+                <mat-card-title>Curso disponible</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="row.urlImagen" alt="" width="20%" height="20%" *ngIf="row.urlImagen != null">
+
+            <mat-card-content>
+                <p class="card-text">Nombre: {{row.nombre}}</p>
+                <p class="card-text">Fecha Inicio: {{row.fechaInicio}}</p>
+                <p class="card-text">Fecha Fin: {{row.fechaInicio}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="primary">Tomar Curso</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>

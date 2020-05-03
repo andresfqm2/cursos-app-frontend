@@ -5,6 +5,8 @@ import { LoginService } from './../../_service/login.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import '../../../assets/login-animation.js';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { RegistroService } from 'src/app/_service/registro.service';
 
 @Component({
   selector: 'app-login',
@@ -22,12 +24,21 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private menuService: MenuService,
-    private router: Router
+    private registroService: RegistroService,
+    private router: Router,
+    private snackBar: MatSnackBar
 
   ) { }
 
   ngOnInit() {
-  }
+
+    this.registroService.mensajeCambio.subscribe(data => {
+      this.snackBar.open(data, 'Aviso', {
+        duration: 2000
+      });
+  });
+}
+
 
   ngAfterViewInit() {
     (window as any).initialize();

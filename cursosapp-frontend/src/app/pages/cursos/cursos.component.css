@@ -1,0 +1,15 @@
+.tarjeta {
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.circular {
+    border-radius: 50%;
+}
+
+.contenedor {
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}

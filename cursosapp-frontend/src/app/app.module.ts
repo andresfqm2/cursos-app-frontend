@@ -24,6 +24,8 @@ import { EstudianteComponent } from './pages/estudiante/estudiante.component';
 import { DocenteComponent } from './pages/docente/docente.component';
 import { AdministrarCursosComponent } from './pages/administrador/administrar-cursos/administrar-cursos.component';
 import { CursosDialogoComponent } from './pages/administrador/cursos-dialogo/cursos-dialogo.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { MatriculaComponent } from './pages/matricula/matricula.component';
 
 
 export function tokenGetter() {
@@ -44,7 +46,9 @@ export function tokenGetter() {
     EstudianteComponent,
     DocenteComponent,
     AdministrarCursosComponent,
-    CursosDialogoComponent
+    CursosDialogoComponent,
+    CursosComponent,
+    MatriculaComponent
   ],
 
   imports: [
